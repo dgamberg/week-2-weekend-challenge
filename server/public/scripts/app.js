@@ -12,26 +12,25 @@ function start(){
         url: "/data",
         success: function(data){
             zetaArray = data.zeta;
-            init(zetaArray);
+            createCarousel(zetaArray);
+            updateIndexPoints();
+            $("#next").on('click', nextSlide);
+            $("#prev").on('click', prevSlide);
         }
     });
 }
-function init(data){
-    createCarousel(zetaArray);
-    updateIndexPoints();
-    $("#next").on('click', nextSlide);
-    $("#prev").on('click', prevSlide);
-}
+
+//var $el = $('#carouselControls');
 
 function createCarousel(array){
-    $("#carousel").append("<div class='main'></div>");
-    var $el = $("#carousel").children().last();
+    $("#mainContent").append("<div class='main'></div>");
+    var $el =  $("#mainContent").find('#carouselControls');
+
     createNavButtons($el);
     createIndexPoints(array, $el);
 }
 
 function nextSlide(){
-    $('.person-container').css('opacity', '0');
     indexTracker++;
     if(indexTracker >= zetaArray.length){
         indexTracker = 0;
@@ -47,6 +46,7 @@ function prevSlide(){
     updateIndexPoints();
 }
 
+
 function createNavButtons($el){
     $el.append("<div id='prev' class='nav-button'>Prev</div>");
     $el.append("<div id='next' class='nav-button'>Next</div>");
@@ -61,13 +61,9 @@ function createIndexPoints(array, $el){
 }
 
 function updateIndexPoints(){
-
     for(var i = 0; i < zetaArray.length; i++){
-
         $("#index" + i).removeClass("index-point-active");
-
         if(i == indexTracker){
-
             $("#index" + i).addClass("index-point-active");
             displaySlide(i);
         }
@@ -75,12 +71,15 @@ function updateIndexPoints(){
 }
 
 function displaySlide(i){
-    var slideOutput =  "<div id='person" + [i] +"' class='person-container well'>" +
-        "<span class='zetaName'>" + zetaArray[i].name + "</span>" +
-        "<img class='git-image' src='" + zetaArray[i].imageUrl + "'>" +
-        "<blockquote>" + zetaArray[i].shoutout + "</blockquote>" +
+    var slideOutput =
+        "<div id='person' class='person-container well'>" +
+        "<div class='git-image'><img src='" + zetaArray[i].imageUrl + "'></div>" +
         "<div class='github-link'><a target='_blank' href='" + zetaArray[i].github + "'>GITHUB LINK >></a>" +
-        "</div></div></div>";
+        "</div>" +
+        "<div class='zeta-name'>" + zetaArray[i].name + "</div>" +
+        "<div class='shout-out'>" + zetaArray[i].shoutout + "</div>" +
+        "<div id='carouselControls'></div>" +
+        "</div>";
 
-    $('#mainContent').html(slideOutput);
+    $('#mainContent').append(slideOutput);
 }

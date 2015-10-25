@@ -1,5 +1,5 @@
 body{
-    font-family: arial;
+    font-family: helvetica, arial, sans-serif;
 }
 .nav-button {
     width: 100px;
@@ -20,11 +20,7 @@ body{
 .index-point-active {
     background-color: #ff2600;
 }
-.name{
-    font-size: 80px;
-    padding: 100px;
-    text-align: center;
-}
+
 #prev{
     position: relative;
     left: -15px;
@@ -39,16 +35,16 @@ body{
     border-radius: 5px;
     margin-bottom: 10px;
 }
-#carousel {
-    clear: both;
-    text-align: center;
-    margin-top: -30px;
+#carouselControls {
+    /*clear: both;*/
+    /*text-align: center;*/
+    /*margin-top: -30px;*/
 }
 
-.zetaName{
+.zeta-name{
     font-size: 30px;
 }
-.git-image{
+.git-image img{
     width: 175px;
     height: 175px;
     border-radius: 15px;
@@ -65,18 +61,18 @@ body{
     margin-left: 100px;
 }
 
-blockquote {
+.shout-out {
     font-style: italic;
     font-size: 20px;
 }
-blockquote:before {
+.shout-out :before {
     content: "''";
     font-size: 25px;
     margin-top: 20px;
     font-style: italic;
     padding-right: 5px;
 }
-blockquote:after {
+.shout-out :after {
     content: "''";
     font-size: 25px;
     margin-top: 20px;
@@ -93,20 +89,22 @@ blockquote:after {
     box-shadow: 1px 1px 4px #000;
     border: 1px solid #000;
 }
-.well blockquote {
+.well .shout-out  {
     border-color: #4078C0;
 }
 .github-link {
     clear: both;
     float: left;
     color: #FFF;
-    padding: 9px;
+    padding: 10px;
     background-color: #B9D8FD;
     border-radius: 7px;
     position: relative;
     top: -10px;
     width: 175px;
     box-shadow: 1px 1px 4px #000;
+    margin-bottom: 10px;
+    margin-right: 24px;
 }
 .github-link a {
     color: #4078c0;
@@ -118,7 +116,4 @@ blockquote:after {
     transition: opacity 3s;
     padding: 25px;
     width: 100%;
-}
-.main {
-    margin-top: 45px;
 }
