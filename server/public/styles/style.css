@@ -1,5 +1,6 @@
 body{
     font-family: arial;
+    background-image:url('backgrounds.jpg');
 }
 .nav-button {
     width: 100px;
@@ -25,24 +26,32 @@ body{
     padding: 100px;
     text-align: center;
 }
-#prev{
+#prev {
     position: relative;
     left: -15px;
-    border: 2px solid #666;
+    border: 1px solid #000;
     border-radius: 5px;
     margin-bottom: 10px;
+    background-color: #fff;
+    color: #4078C0;
+    opacity: 1;
 }
 #next{
     position: relative;
     left: 15px;
-    border: 2px solid #666;
+    border: 1px solid #000;
     border-radius: 5px;
     margin-bottom: 10px;
+    background-color: #fff;
+    color: #4078C0;
+    opacity: 1;
 }
-#carousel {
+#carouselControls {
     clear: both;
     text-align: center;
-    margin-top: -30px;
+    position: relative;
+    top: -85px;
+    left: 95px;
 }
 
 .zetaName{
@@ -56,6 +65,7 @@ body{
     margin-right: 25px;
     margin-bottom: 25px;
     box-shadow: 1px 1px 4px #000;
+    opacity: 1;
 }
 
 .image-container {
@@ -65,18 +75,19 @@ body{
     margin-left: 100px;
 }
 
-blockquote {
+.shoutout {
     font-style: italic;
     font-size: 20px;
+    line-height: 29px;
 }
-blockquote:before {
+.shoutout:before {
     content: "''";
     font-size: 25px;
     margin-top: 20px;
     font-style: italic;
     padding-right: 5px;
 }
-blockquote:after {
+.shoutout:after {
     content: "''";
     font-size: 25px;
     margin-top: 20px;
@@ -93,20 +104,21 @@ blockquote:after {
     box-shadow: 1px 1px 4px #000;
     border: 1px solid #000;
 }
-.well blockquote {
+.well .shoutout {
     border-color: #4078C0;
 }
 .github-link {
     clear: both;
     float: left;
-    color: #FFF;
+    color: #4078C0;
     padding: 9px;
-    background-color: #B9D8FD;
+    background-color: #FFF;
     border-radius: 7px;
     position: relative;
     top: -10px;
     width: 175px;
     box-shadow: 1px 1px 4px #000;
+    opacity: 1;
 }
 .github-link a {
     color: #4078c0;
@@ -118,7 +130,9 @@ blockquote:after {
     transition: opacity 3s;
     padding: 25px;
     width: 100%;
+    min-height: 315px;
 }
-.main {
+#mainContent {
     margin-top: 45px;
+    opacity: .90;
 }
